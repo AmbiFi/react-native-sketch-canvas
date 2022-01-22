@@ -150,6 +150,16 @@ export default class RNSketchCanvas extends React.Component {
     this._sketchCanvas.deletePath(id)
   }
 
+  getPaths() {
+    if (this._sketchCanvas) {
+      return this._sketchCanvas.getPaths();
+    }
+  }
+
+  getBase64(imageType, transparent, includeImage, includeText, cropToImageSize, callback) {
+    this._sketchCanvas.getBase64(imageType, transparent, includeImage, includeText, cropToImageSize, callback);
+  }
+
   save() {
     if (this.props.savePreference) {
       const p = this.props.savePreference()
